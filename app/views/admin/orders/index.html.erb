@@ -1,12 +1,28 @@
-<h1>Orders</h1>
+<div id="wrapper" class="animate">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Orders</h5>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @orders.each do |order|  %>
+                  <tr>
+                      <td><%= order.id %></td>
+                  </tr>
+                <% end %>                  
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<table>
-  <tr>
-    <th>Id</th>
-  </tr>
-  <% @orders.each do |order| %>
-	  <tr>
-	    <td><%= order.id %></td>
-	  </tr>
-  <% end %>
-</table>
+  </div>
+</div>

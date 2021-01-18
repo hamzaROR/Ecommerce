@@ -1,21 +1,24 @@
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+<div class="container">
+  <h1 class="my-4">Product Detail Page</h1>
+  <div class="row">
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.description %>
-</p>
+    <div class="col-md-12">
+      <h4 class="my-3"><b>Name:</b>  <%= @product.name %></h4>
+    </div>
 
-
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+    <div class="col-md-12">
+      <h4 class="my-3"><b>Description:</b>  <%= @product.description %></h4>
+    </div>
 
 
-<p>
-  <strong>Category:</strong>
-  <%= @product.category.name %>
-</p>
+    <div class="col-md-12">
+      <h4 class="my-3"><b>Price:</b>  <%= @product.price %></h4>
+    </div>
+
+
+    <div class="col-md-12">
+      <h4 class="my-3"><b>category:</b>  <%= @product.category.name %></h4>
+    </div>
+
+  </div>
+</div>
