@@ -1,0 +1,95 @@
+  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+        <a href="#">ADMIN</a>
+        <div id="close-sidebar">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      <div class="sidebar-menu">
+        <ul>
+          <li class="sidebar-dropdown">
+            <a href="/admin">
+              <i class="fa fa-tachometer-alt"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="<%= admin_orders_path %>">
+              <i class="fa fa-shopping-cart"></i>
+              <span>Orders</span>
+              <!-- <span class="badge badge-pill badge-danger">3</span> -->
+            </a>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="<%= admin_products_path %>">
+              <i class="far fa-gem"></i>
+              <span>Products</span>
+            </a>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="<%= admin_users_path %>">
+              <i class="fa fa-chart-line"></i>
+              <span>Users</span>
+            </a>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="<%= admin_categories_path %>">
+              <i class="fa fa-folder"></i>
+              <span>Categories</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+        <small>
+          © 2021 made with <i class="fa fa-heart" style="color:red"></i> by - <a target="_blank" rel="noopener noreferrer" href="http://techhill.org">
+            Tech Hill
+          </a>
+        </small>
+    </div>
+  </nav>
+
+
+  <script type="text/javascript">
+  jQuery(function ($) {
+
+    $(".sidebar-dropdown > a").click(function() {
+  $(".sidebar-submenu").slideUp(200);
+  if (
+    $(this)
+      .parent()
+      .hasClass("active")
+  ) {
+    $(".sidebar-dropdown").removeClass("active");
+    $(this)
+      .parent()
+      .removeClass("active");
+  } else {
+    $(".sidebar-dropdown").removeClass("active");
+    $(this)
+      .next(".sidebar-submenu")
+      .slideDown(200);
+    $(this)
+      .parent()
+      .addClass("active");
+  }
+});
+
+$("#close-sidebar").click(function() {
+  $(".page-wrapper").removeClass("toggled");
+});
+$("#show-sidebar").click(function() {
+  $(".page-wrapper").addClass("toggled");
+});
+
+
+   
+   
+});
+</script>

@@ -1,5 +1,8 @@
 class Admin::UsersController < ApplicationController
-  def index
-  	@users = User.all
-  end
+	layout "admin"
+	before_action :authenticate_admin!
+
+	def index
+		@users = User.all
+	end
 end
